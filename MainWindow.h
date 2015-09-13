@@ -15,6 +15,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void on_bDataInput_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
