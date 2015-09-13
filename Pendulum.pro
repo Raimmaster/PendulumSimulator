@@ -14,10 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    DataInput.cpp
+    DataInput.cpp \
+    graficasdialog.cpp
 
 HEADERS  += MainWindow.h \
-    DataInput.h
+    DataInput.h \
+    graficasdialog.h
 
 FORMS    += MainWindow.ui \
-    DataInput.ui
+    DataInput.ui \
+    graficasdialog.ui
