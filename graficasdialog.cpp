@@ -59,29 +59,98 @@ void GraficasDialog::on_graficarBtn_clicked()
     if( ui->skipSlider->value() <= puntoFinal - puntoInicial)
         skip = ui->skipSlider->value();
 
+    QString lbls[2][3];
+
+    lbls[0][0] = ui->const1Lbl->text();
+    lbls[1][0] = ui->const1LE->text();
+    lbls[0][1] = ui->const2Lbl->text();
+    lbls[1][1] = ui->const2LE->text();
+    lbls[0][2] = ui->const3Lbl->text();
+    lbls[1][2] = ui->const3LE->text();
+
     if( ui->lengthRadio->isChecked() )
     {
+        float gravity = 0,
+                   freq = 0,
+                    period = 0;
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(lbls[0][i] == "Gravedad") gravity = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Frecuencia") freq = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
+        }
+
+        qDebug() << gravity << "\n";
+        qDebug() << freq << "\n";
+        qDebug() <<  period << "\n";
+
         gScene->graphAngularFreqForLength(puntoInicial, puntoFinal, skip, 0, 0);
     }
 
     else if( ui->freqRadio->isChecked() )
     {
+        float gravity = 0,
+                   length = 0,
+                    period = 0;
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(lbls[0][i] == "Gravedad") gravity = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Longitud") length = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
+        }
+
+        qDebug() << length << "\n";
+        qDebug() << gravity << "\n";
+        qDebug() <<  period << "\n";
+
         gScene->graphAngularFreqForFreq(puntoInicial, puntoFinal, skip, 0, 0);
     }
 
     else if( ui->periodRadio->isChecked() )
     {
+        float gravity = 0,
+                   freq = 0,
+                    length = 0;
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(lbls[0][i] == "Gravedad") gravity = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Frecuencia") freq = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Longitud") length = lbls[1][i].toFloat();
+        }
+
+        qDebug() << length << "\n";
+        qDebug() << freq << "\n";
+        qDebug() <<  gravity << "\n";
+
         gScene->graphAngularFreqForPeriod(puntoInicial, puntoFinal, skip, 0, 0);
     }
 
     else
     {
+        float length = 0,
+                   freq = 0,
+                    period = 0;
+
+        for(int i = 0; i < 3; i++)
+        {
+            if(lbls[0][i] == "Longitud") length = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Frecuencia") freq = lbls[1][i].toFloat();
+            if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
+        }
+
+        qDebug() << length << "\n";
+        qDebug() << freq << "\n";
+        qDebug() <<  period << "\n";
+
         gScene->graphAngularFreqForGravity(puntoInicial, puntoFinal, skip, 0, 0);
     }
 
-       qDebug() << puntoInicial << "\n";
-       qDebug() << puntoFinal << "\n";
-       qDebug() <<  skip << "\n";
+//       qDebug() << puntoInicial << "\n";
+//       qDebug() << puntoFinal << "\n";
+//       qDebug() <<  skip << "\n";
 }
 
 void GraficasDialog::on_skipSlider_valueChanged(int value)
