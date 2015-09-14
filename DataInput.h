@@ -15,6 +15,8 @@ public:
     explicit DataInput(QWidget *parent = 0);
     ~DataInput();
 
+private slots:
+
 private:
     Ui::DataInput *ui;
 };

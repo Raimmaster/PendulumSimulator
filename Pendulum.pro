@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    DataInput.cpp
+    DataInput.cpp \
+    Pendulo.cpp
 
 HEADERS  += MainWindow.h \
-    DataInput.h
+    DataInput.h \
+    Pendulo.h
 
 FORMS    += MainWindow.ui \
     DataInput.ui
