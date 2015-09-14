@@ -34,6 +34,11 @@ private slots:
 
 private:
     Ui::GraficasDialog *ui;
+
+    int lastChecked = 0;
+    int housed[4];
+
+    void houseLbl(int indx);
 };
 
 #endif // GRAFICASDIALOG_H

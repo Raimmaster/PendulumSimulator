@@ -270,19 +270,6 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="puntoFinLE">
-       <property name="inputMask">
-        <string/>
-       </property>
-       <property name="maxLength">
-        <number>5</number>
-       </property>
-       <property name="placeholderText">
-        <string>0</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QLineEdit" name="puntoIniLE">
        <property name="maxLength">
         <number>5</number>
@@ -292,6 +279,19 @@
        </property>
        <property name="clearButtonEnabled">
         <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="puntoFinLE">
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="maxLength">
+        <number>5</number>
+       </property>
+       <property name="placeholderText">
+        <string>0</string>
        </property>
       </widget>
      </item>
