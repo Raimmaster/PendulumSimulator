@@ -12,6 +12,8 @@ GraficasDialog::GraficasDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    setWindowTitle("Graficador -- Frecuencia Angular");
+
     ui->puntoIniLE->setValidator(new QDoubleValidator(-100, 100, 1 ));
     ui->puntoFinLE->setValidator(new QDoubleValidator(-100, 100, 1 ));
 
