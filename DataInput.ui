@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>DataInput</class>
- <widget name="DataInput" class="QDialog">
+ <widget class="QDialog" name="DataInput">
   <property name="geometry">
    <rect>
     <x>0</x>

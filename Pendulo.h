@@ -9,7 +9,7 @@ using namespace std;
 struct forza{
     float fx;
     float fy;
-}forza;
+};
 
 class Pendulo
 {
