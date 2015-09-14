@@ -19,6 +19,9 @@ public:
 
     GraphingScene* gScene;
 
+private slots:
+    void on_graficarBtn_clicked();
+
 private:
     Ui::GraficasDialog *ui;
 };
