@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "graphingscene.h"
+
 namespace Ui {
 class GraficasDialog;
 }
@@ -14,6 +16,8 @@ class GraficasDialog : public QDialog
 public:
     explicit GraficasDialog(QWidget *parent = 0);
     ~GraficasDialog();
+
+    GraphingScene* gScene;
 
 private:
     Ui::GraficasDialog *ui;

@@ -15,11 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         MainWindow.cpp \
     DataInput.cpp \
-    graficasdialog.cpp
+    graficasdialog.cpp \
+    graphingscene.cpp \
+    coordinateplane.cpp
 
 HEADERS  += MainWindow.h \
     DataInput.h \
-    graficasdialog.h
+    graficasdialog.h \
+    graphingscene.h \
+    coordinateplane.h
 
 FORMS    += MainWindow.ui \
     DataInput.ui \
