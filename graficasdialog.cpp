@@ -71,3 +71,28 @@ void GraficasDialog::on_graficarBtn_clicked()
        qDebug() << puntoFinal << "\n";
        qDebug() <<  skip << "\n";
 }
+
+void GraficasDialog::on_skipSlider_valueChanged(int value)
+{
+
+}
+
+void GraficasDialog::on_gravityRadio_toggled(bool checked)
+{
+
+}
+
+void GraficasDialog::on_lengthRadio_toggled(bool checked)
+{
+
+}
+
+void GraficasDialog::on_freqRadio_toggled(bool checked)
+{
+
+}
+
+void GraficasDialog::on_periodRadio_toggled(bool checked)
+{
+
+}

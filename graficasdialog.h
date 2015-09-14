@@ -22,6 +22,16 @@ public:
 private slots:
     void on_graficarBtn_clicked();
 
+    void on_skipSlider_valueChanged(int value);
+
+    void on_gravityRadio_toggled(bool checked);
+
+    void on_lengthRadio_toggled(bool checked);
+
+    void on_freqRadio_toggled(bool checked);
+
+    void on_periodRadio_toggled(bool checked);
+
 private:
     Ui::GraficasDialog *ui;
 };
