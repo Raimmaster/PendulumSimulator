@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     DataInput.cpp \
     graficasdialog.cpp \
     graphingscene.cpp \
-    coordinateplane.cpp
+    coordinateplane.cpp \
+    frecuenciaangular.cpp
 
 HEADERS  += MainWindow.h \
     DataInput.h \
     graficasdialog.h \
     graphingscene.h \
-    coordinateplane.h
+    coordinateplane.h \
+    frecuenciaangular.h
 
 FORMS    += MainWindow.ui \
     DataInput.ui \

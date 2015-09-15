@@ -29,6 +29,9 @@ GraficasDialog::GraficasDialog(QWidget *parent) :
 
     QGraphicsView* gView = ui->graphicsView;
 
+    ui->skipSlider->setMinimum(0);
+    ui->skipSlider->setValue(0);
+
     int dif = 0; // Un pequeno offset
     gScene = new  GraphingScene(gView, 0, 0, gView->width() - dif, gView->height() - dif);
     gView->setScene(gScene);
@@ -42,9 +45,9 @@ GraficasDialog::~GraficasDialog()
 void GraficasDialog::on_graficarBtn_clicked()
 {
     // Default params
-    float puntoInicial = 0,
-              puntoFinal = 0,
-              skip = 0;
+    float puntoInicial = 1,
+              puntoFinal = 1,
+              skip = 1;
 
     if( ui->puntoIniLE->text().length())
     {
@@ -55,6 +58,9 @@ void GraficasDialog::on_graficarBtn_clicked()
     {
          puntoFinal = ui->puntoFinLE->text().toFloat();
     }
+
+    if(puntoInicial == puntoFinal ||
+            !ui->skipSlider->value()) return;
 
     if( ui->skipSlider->value() <= puntoFinal - puntoInicial)
         skip = ui->skipSlider->value();
@@ -70,9 +76,9 @@ void GraficasDialog::on_graficarBtn_clicked()
 
     if( ui->lengthRadio->isChecked() )
     {
-        float gravity = 0,
-                   freq = 0,
-                    period = 0;
+        float gravity = 1,
+                   freq = 1,
+                    period = 1;
 
         for(int i = 0; i < 3; i++)
         {
@@ -81,18 +87,14 @@ void GraficasDialog::on_graficarBtn_clicked()
             if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
         }
 
-        qDebug() << gravity << "\n";
-        qDebug() << freq << "\n";
-        qDebug() <<  period << "\n";
-
-        gScene->graphAngularFreqForLength(puntoInicial, puntoFinal, skip, 0, 0);
+        gScene->graphAngularFreqForLength(puntoInicial, puntoFinal, skip, gravity, freq);
     }
 
     else if( ui->freqRadio->isChecked() )
     {
-        float gravity = 0,
-                   length = 0,
-                    period = 0;
+        float gravity = 1,
+                   length = 1,
+                    period = 1;
 
         for(int i = 0; i < 3; i++)
         {
@@ -101,18 +103,14 @@ void GraficasDialog::on_graficarBtn_clicked()
             if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
         }
 
-        qDebug() << length << "\n";
-        qDebug() << gravity << "\n";
-        qDebug() <<  period << "\n";
-
-        gScene->graphAngularFreqForFreq(puntoInicial, puntoFinal, skip, 0, 0);
+        gScene->graphAngularFreqForFreq(puntoInicial, puntoFinal, skip, length, gravity);
     }
 
     else if( ui->periodRadio->isChecked() )
     {
-        float gravity = 0,
-                   freq = 0,
-                    length = 0;
+        float gravity = 1,
+                   freq = 1,
+                    length = 1;
 
         for(int i = 0; i < 3; i++)
         {
@@ -121,18 +119,14 @@ void GraficasDialog::on_graficarBtn_clicked()
             if(lbls[0][i] == "Longitud") length = lbls[1][i].toFloat();
         }
 
-        qDebug() << length << "\n";
-        qDebug() << freq << "\n";
-        qDebug() <<  gravity << "\n";
-
-        gScene->graphAngularFreqForPeriod(puntoInicial, puntoFinal, skip, 0, 0);
+        gScene->graphAngularFreqForPeriod(puntoInicial, puntoFinal, skip, length, gravity);
     }
 
     else
     {
-        float length = 0,
-                   freq = 0,
-                    period = 0;
+        float length = 1,
+                   freq = 1,
+                    period = 1;
 
         for(int i = 0; i < 3; i++)
         {
@@ -141,16 +135,9 @@ void GraficasDialog::on_graficarBtn_clicked()
             if(lbls[0][i] == "Periodo") period = lbls[1][i].toFloat();
         }
 
-        qDebug() << length << "\n";
-        qDebug() << freq << "\n";
-        qDebug() <<  period << "\n";
-
-        gScene->graphAngularFreqForGravity(puntoInicial, puntoFinal, skip, 0, 0);
+        gScene->graphAngularFreqForGravity(puntoInicial, puntoFinal, skip, length, freq);
     }
 
-//       qDebug() << puntoInicial << "\n";
-//       qDebug() << puntoFinal << "\n";
-//       qDebug() <<  skip << "\n";
 }
 
 void GraficasDialog::on_skipSlider_valueChanged(int value)
