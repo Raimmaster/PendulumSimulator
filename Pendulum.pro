@@ -14,10 +14,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    DataInput.cpp
+    DataInput.cpp \
+    graficasdialog.cpp \
+    graphingscene.cpp \
+    coordinateplane.cpp \
+    frecuenciaangular.cpp
 
 HEADERS  += MainWindow.h \
-    DataInput.h
+    DataInput.h \
+    graficasdialog.h \
+    graphingscene.h \
+    coordinateplane.h \
+    frecuenciaangular.h
 
 FORMS    += MainWindow.ui \
-    DataInput.ui
+    DataInput.ui \
+    graficasdialog.ui
