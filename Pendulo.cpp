@@ -5,6 +5,19 @@ Pendulo::Pendulo()
 
 }
 
+forza Pendulo::funcion(double *r, double t){
+    double theta = r[0];
+    double omega = r[1];
+
+
+    double fx = omega;
+    double fy = -1.0 * (GRAVEDAD/longitud) * sin(theta) - amortiguamiento*omega + fuerza_impulsadora*sin(frecuencia*t);
+    forza arreglo;
+    arreglo.fx = fx;
+    arreglo.fy = fy;
+    return arreglo;
+}
+
 /**Devuelve un vector con valores divididos entre el step indicado
 **/
 vector<double> Pendulo::arange(double start, double stop, double step){

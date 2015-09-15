@@ -25,6 +25,7 @@ public:
 private:
     vector<double> arange(double start, double stop, double step);
     double deg2rad(double degs);
+    forza funcion(double r[2], double t);
 
 };
 
