@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     graficasdialog.cpp \
     graphingscene.cpp \
     coordinateplane.cpp \
-    frecuenciaangular.cpp
+    frecuenciaangular.cpp \
+    Pendulo.cpp
 
 HEADERS  += MainWindow.h \
     DataInput.h \
     graficasdialog.h \
     graphingscene.h \
     coordinateplane.h \
-    frecuenciaangular.h
+    frecuenciaangular.h \
+    Pendulo.h
 
 FORMS    += MainWindow.ui \
     DataInput.ui \

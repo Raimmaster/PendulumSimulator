@@ -4,6 +4,25 @@ Pendulo::Pendulo()
 {
 
 }
+
+/**Devuelve un vector con valores divididos entre el step indicado
+**/
+vector<double> Pendulo::arange(double start, double stop, double step){
+    double accum = start;
+    vector<double> arreglo;
+    while(accum < stop){
+        arreglo.push_back(accum);
+        accum += step;
+    }
+
+    return arreglo;
+}
+
+double Pendulo::deg2rad(double degs){
+    return degs * (PI/180);
+}
+
+
 /*
  *
 from math import sin
