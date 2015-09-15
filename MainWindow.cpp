@@ -20,3 +20,10 @@ void MainWindow::on_bDataInput_clicked()
     di.setModal(true);
     di.exec();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    gfxDialog = new GraficasDialog();
+    gfxDialog->setModal(true);
+    gfxDialog->exec();
+}
