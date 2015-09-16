@@ -8,6 +8,8 @@ DataInput::DataInput(QWidget *parent) :
     ui->setupUi(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(animar()));
     timer->start(100);
+    int scale = 1;
+    ui->qgvAnimacion->scale(scale*0.3, scale*.3);
 }
 
 DataInput::~DataInput()
@@ -57,7 +59,10 @@ void DataInput::on_pushButton_clicked()
 void DataInput::animar(){
     if(x>=0 && x < animacion.x.size()){
         cout<<x<<" . "<< animacion.x.size()<<endl;
-        circulo->setPos(animacion.y[x], animacion.x[x]);
+        circulo->setPos(animacion.x[x], animacion.y[x]);
+
+        ui->xpos->setText("X:" + QString::number(animacion.x[x]));
+        ui->ypos->setText("Y:" + QString::number(animacion.y[x]));
         x++;
     }
 }
