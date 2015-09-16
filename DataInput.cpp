@@ -19,19 +19,19 @@ DataInput::~DataInput()
 
 void DataInput::on_pushButton_clicked()
 {
-//    double longitud = ui->tLongitud->text().toDouble();
-//    double amortiguamiento = ui->tAmortiguamiento->text().toDouble();
-//    double N = ui->tFuerza->text().toDouble();
-//    double frecuencia = ui->tFrecuencia->text().toDouble(); //de la fuerza impulsadora
-//    double theta = ui->tTheta->text().toDouble(), omega = ui->tOmega->text().toDouble();
-//    double a = ui->tInicio->text().toDouble(), b = ui->tFin->text().toDouble(), F = ui->tAmplitud->text().toDouble();
+    double longitud = ui->tLongitud->text().toDouble();
+    double amortiguamiento = ui->tAmortiguamiento->text().toDouble();
+    double N = ui->tFuerza->text().toDouble();
+    double frecuencia = ui->tFrecuencia->text().toDouble(); //de la fuerza impulsadora
+    double theta = ui->tTheta->text().toDouble(), omega = ui->tOmega->text().toDouble();
+    double a = ui->tInicio->text().toDouble(), b = ui->tFin->text().toDouble(), F = ui->tAmplitud->text().toDouble();
 
-    double longitud = 2;
-    double amortiguamiento = 0.14;
-    double N = 1000;
-    double frecuencia = 0.5; //de la fuerza impulsadora
-    double theta = 34.38, omega = 0;
-    double a = 0, b = 100, F = 0.6;
+//    double longitud = 2;
+//    double amortiguamiento = 0.14;
+//    double N = 1000;
+//    double frecuencia = 0.5; //de la fuerza impulsadora
+//    double theta = 34.38, omega = 0;
+//    double a = 0, b = 100, F = 0.6;
 
     Pendulo p;
     p.a = a;
@@ -44,9 +44,9 @@ void DataInput::on_pushButton_clicked()
     p.theta = p.deg2rad(theta);
     p.h = (b-a)/N;
 
-    cout<<"Llego aki"<<endl;
+    cout<<"Llego aqui"<<endl;
     animacion = p.getData();
-    cout<<"Llego aki"<<endl;
+    cout<<"Llego aqui"<<endl;
 
     QGraphicsScene *scene = new QGraphicsScene();
     QBrush redBrush(Qt::red);
