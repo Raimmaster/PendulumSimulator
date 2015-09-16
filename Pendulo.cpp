@@ -35,18 +35,21 @@ double Pendulo::deg2rad(double degs){
     return degs * (PI/180);
 }
 
-data Pendulo::vectorgetData(){
+anim Pendulo::getData(){
+    cout<<"estamos aqui"<<endl;
     vector<double> tpuntos = arange(a,b,h);
     vector<double> thetap, omegap;
 
-    double cinit[2];
-    cinit[0] = theta;
-    cinit[1] = omega;
+//    double cinit[2];
+//    cinit[0] = theta;
+//    cinit[1] = omega;
 
     forza r;
     r.fx = theta;
     r.fy = omega;
+    cout<<"estamos aqui"<<endl;
     for(int x = 0;  x < tpuntos.size(); x++){
+        cout<<"\t"<<x<<endl;
         thetap.push_back(r.fx);
         omegap.push_back(r.fy);
 
@@ -71,6 +74,11 @@ data Pendulo::vectorgetData(){
 
 
     }
+
+    anim animacion;
+    animacion.x = thetap;
+    animacion.y = omegap;
+    return animacion;
 }
 
 forza Pendulo::suma(forza f1, forza f2){

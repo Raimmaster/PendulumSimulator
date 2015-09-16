@@ -27,3 +27,10 @@ void MainWindow::on_pushButton_clicked()
     gfxDialog->setModal(true);
     gfxDialog->exec();
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    DataInput di;
+    di.setModal(true);
+    di.exec();
+}

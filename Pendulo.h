@@ -11,7 +11,7 @@ struct forza{
     double fy;
 };
 
-struct data{
+struct anim{
     vector<double> x;
     vector<double> y;
 };
@@ -29,10 +29,10 @@ public:
     double theta, omega;
     double a, b, N, h;
 
-    data vectorgetData();
+    anim getData();
+    double deg2rad(double degs);
 private:
     vector<double> arange(double start, double stop, double step);
-    double deg2rad(double degs);
     forza funcion(forza r, double t);
     //        k1 = h*f(r,t)
     //        k2 = h*f(r+0.5*k1,t+0.5*h)
