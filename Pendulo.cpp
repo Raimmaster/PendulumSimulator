@@ -11,7 +11,7 @@ forza Pendulo::funcion(forza r, double t){
 
 
     double fx = omega;
-    double fy = -1.0 * (GRAVEDAD/longitud) * sin(theta) - amortiguamiento*omega + fuerza_impulsadora*sin(frecuencia*t);
+    double fy = -1.0 * (GRAVEDAD/longitud) * sin(theta) - amortiguamiento*omega + N*sin(frecuencia*t);
     forza arreglo;
     arreglo.fx = fx;
     arreglo.fy = fy;

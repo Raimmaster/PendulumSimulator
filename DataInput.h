@@ -2,6 +2,7 @@
 #define DATAINPUT_H
 
 #include <QDialog>
+#include "Pendulo.h"
 
 namespace Ui {
 class DataInput;
@@ -16,6 +17,8 @@ public:
     ~DataInput();
 
 private slots:
+
+    void on_pushButton_clicked();
 
 private:
     Ui::DataInput *ui;

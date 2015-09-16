@@ -20,15 +20,14 @@ class Pendulo
 {
 public:
     Pendulo();
-    forza fuerza_alterna;
+    //forza fuerza_alterna;
     const static double GRAVEDAD = 9.8;//metros entre segundos
     const double PI = 3.14159;
     double longitud;//del péndulo
     double amortiguamiento;
-    double fuerza_impulsadora;
     double frecuencia; //de la fuerza impulsadora
     double theta, omega;
-    double a, b, h;
+    double a, b, N, h;
 
     data vectorgetData();
 private:
