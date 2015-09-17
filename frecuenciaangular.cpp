@@ -47,11 +47,16 @@ void FrecuenciaAngular::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 
             else if(variable == PERIOD)
                 angularFreq = sqrt(gravity/length) * (1/i);
+            else if (variable == SINUSOIDAL){
+                angularFreq = endPoint * sin(sqrt(gravity/length)) * i;
+            }
+
 
             float x = (i > 0 ? (w/2)+(i*PLANE_TO_PIXELS) : i*PLANE_TO_PIXELS);
             float y = (angularFreq > 0 ? angularFreq*PLANE_TO_PIXELS :  (h/2) + (angularFreq*PLANE_TO_PIXELS) );
 
-            if(i == startPoint) path.moveTo(x, y);
+            if(i == startPoint)
+                path.moveTo(x, y);
 
             else
             path.lineTo(x, y);
@@ -61,11 +66,34 @@ void FrecuenciaAngular::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 
 }
 
+/**
+ * @brief FrecuenciaAngular::paintSinusoidal - Debe de graficar sinuosoidalmente
+ * el movimiento de un péndulo. Usa la ecuación theta = theta_max * sen(sqrt(g/L))*t
+ * donde g es gravedad, L longitud, y t el tiempo
+ * @param painter
+ * @param option
+ * @param widget
+ */
+void FrecuenciaAngular::paintSinusoidal(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
+
+}
+
 QRectF FrecuenciaAngular::boundingRect() const
 {
     return QRectF(x, y, w, h);
 }
 
+/**
+ * @brief FrecuenciaAngular::set
+ * @param g - Gravedad
+ * @param f - Frecuencia
+ * @param l - Longitud
+ * @param p - Periodo
+ * @param s - Cantidad de puntos a dar en escala
+ * @param sp - Punto inicial
+ * @param ep - Punto final
+ * @param v - En función a
+ */
 void FrecuenciaAngular::set(float g, float f, float l, float p, float s, float sp, float ep, int v)
 {
     gravity = g;

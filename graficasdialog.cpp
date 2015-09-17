@@ -29,8 +29,8 @@ GraficasDialog::GraficasDialog(QWidget *parent) :
 
     QGraphicsView* gView = ui->graphicsView;
 
-    ui->skipSlider->setMinimum(0);
-    ui->skipSlider->setValue(0);
+    ui->skipSlider->setMinimum(1);
+    ui->skipSlider->setValue(1);
 
     int dif = 0; // Un pequeno offset
     gScene = new  GraphingScene(gView, 0, 0, gView->width() - dif, gView->height() - dif);

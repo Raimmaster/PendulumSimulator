@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>785</width>
-    <height>371</height>
+    <height>399</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -247,7 +247,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>330</y>
+     <y>350</y>
      <width>96</width>
      <height>31</height>
     </rect>
@@ -266,7 +266,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>X:</string>
+    <string>Theta:</string>
    </property>
   </widget>
   <widget class="QLabel" name="ypos">
@@ -279,7 +279,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Y:</string>
+    <string>Omega:</string>
    </property>
   </widget>
  </widget>

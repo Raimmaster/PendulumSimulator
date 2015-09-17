@@ -6,7 +6,7 @@
 
 enum Variables
 {
-       GRAVITY, FREQUENCY, LENGTH, PERIOD
+       GRAVITY, FREQUENCY, LENGTH, PERIOD, SINUSOIDAL
 };
 
 class FrecuenciaAngular : public  QGraphicsItem
@@ -16,7 +16,7 @@ public:
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     QRectF boundingRect() const;
-
+    void paintSinusoidal(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void set(float g, float f, float l, float p, float s, float sp, float ep, int v);
 
     void clear();
